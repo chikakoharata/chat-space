@@ -46,18 +46,18 @@
       }
     }
 
-    .side-bar__group-list {
+    .groups {
       background-color: #2f3e51;
       height: calc(100vh - 100px);
       width: 300px;
       padding: 20px 20px 0 ;
 
-      &__new {
+      .group {
         list-style-type: none;
         height: 65px;
         font-weight: bold;
 
-        &__group {
+        &__name {
           font-size: 15px;
           margin-bottom: 5px;
 
