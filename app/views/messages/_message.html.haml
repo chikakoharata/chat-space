@@ -1,0 +1,19 @@
+.message-list__top
+  .message-list__top__name
+    = message.user.name
+  .message-list__top__date
+    = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+.message-list__message
+  - if message.content.present?
+    %p.lower-message__content
+    = message.content
+  = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+.form
+  .form__message
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fa','image',class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
