@@ -2,7 +2,7 @@
   .chat-main__group-info
     .chat-main__group-info__left-box
       .chat-main__group-info__left-box__group
-        = current_user.groups
+        = @group.name
       .chat-main__group-info__left-box__user
         .chat-main__group-info__left-box__user__member="member : "
         .chat-main__group-info__left-box__user__name
@@ -12,3 +12,12 @@
         .edit-button="Edit"
   .message-list
     = render @messages
+  .form
+    .form__message
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = icon('fa','image',class: 'icon')
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
