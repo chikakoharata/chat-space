@@ -127,6 +127,7 @@
       height: calc(100vh - 190px);
       width: calc(100vw - 300px);
       padding: 30px 40px;
+      overflow: scroll;
 
       &__top {
         display: flex;
