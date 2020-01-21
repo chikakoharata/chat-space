@@ -122,19 +122,19 @@
     }
 
 
-    .message-list {
+    .messages {
       background-color: #fafafa;
       height: calc(100vh - 190px);
       width: calc(100vw - 300px);
       padding: 30px 40px;
       overflow: scroll;
 
-      &__top {
+      .message-list__top {
         display: flex;
         margin-bottom: 12px;
 
         &__name {
-          margin-right: 5px;
+          margin-right: 10px;
           font-size: 16px;
           color: #333333;
         }
@@ -143,7 +143,7 @@
           color: #999999;
         }
       }
-      &__message {
+      .message-list__message {
         margin-bottom: 46px;
         font-size: 14px;
         color: #434A54;
