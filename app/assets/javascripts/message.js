@@ -5,14 +5,16 @@ $(function() {
     image = (message.image) ? `<img class= "lower-message__image" src=${message.image} >`:"";
 
     var html =
-      `<div class="message-list__top" data-message-id=${message.id}>
+      `<div class="message" data-message-id=${message.id}>
+         <div class="message-list__top">
           <div class="message-list__top__name">
             ${message.user_name}
           </div>
           <div class="message-list__top__date">
-            ${message.date}
+            ${message.created_at}
           </div>
         </div>
+
         <div class="message-list__message">
           <p class="lower-message__content">
             ${message.content}
@@ -56,6 +58,7 @@ $(function() {
       data: {id: last_message_id}
     })
     .done(function(messages){
+      console.table(messages)
       if ('messages'.length !== 0) {
         var insertHTML = '';
         $.each(messages, function(i, message) {
@@ -75,3 +78,9 @@ $(function() {
     setInterval(reloadMessages, 7000);
   }
 });
+
+
+
+
+
+
