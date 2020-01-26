@@ -58,7 +58,6 @@ $(function() {
       data: {id: last_message_id}
     })
     .done(function(messages){
-      console.table(messages)
       if ('messages'.length !== 0) {
         var insertHTML = '';
         $.each(messages, function(i, message) {
@@ -66,7 +65,6 @@ $(function() {
         });
         $('.messages').append(insertHTML);
         $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight},'fast');
-        $("#new_message")[0].reset();
         $(".form__submit").prop("disabled", false);
       }
     })
